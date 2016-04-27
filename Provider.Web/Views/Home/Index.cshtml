@@ -1,0 +1,31 @@
+﻿@model Provider.Web.Models.AbonentModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3>Список абонентов</h3>
+    <table>
+        <tr>
+            <td>
+                <p>Абонент</p>
+            </td>
+            <td>
+                <p>Адрес</p>
+            </td>
+            <td>
+                <p>Тариф</p>
+            </td>
+        </tr>
+        @foreach (var b in Model.Abonents)
+        {
+            <tr>
+                <td>
+                    <p>@b.Name</p></td>
+                <td>
+                    <p>@b.Address</p></td>
+                <td>
+                    <p>@b.TName</p></td>
+            </tr>
+        }
+    </table>
+</div>

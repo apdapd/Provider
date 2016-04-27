@@ -1,0 +1,50 @@
+﻿@model Provider.Web.Models.AbonentModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div>
+    <h3>Список абонентов</h3>
+    <table>
+        <tr>
+            <td>
+            @*<td><p><a href="/Home/Buy/@b.Id">Код абонента</a></p></td>*@
+                <p>Код абонента</p>
+            </td>
+            <td>
+                <p>Код тарифа</p>
+            </td><td>
+                <p>Абонент</p>
+            </td>
+            <td>
+                <p>Адрес</p>
+            </td>
+            <td>
+                <p>Тариф</p>
+            </td>
+        </tr>
+        @foreach (var b in Model.Abonents)
+        {
+            <tr>
+                <td>
+                    <p>@b.AbonentId</p>
+                </td>
+                <td>
+                    <p>@b.TarifId</p>
+                </td>
+                <td>
+                    <p>@b.Name</p>
+                </td>
+                <td>
+                    <p>@b.Address</p>
+                </td><td>
+                    <p>@b.TName</p>
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div class="pager">
+    @Html.PageLinks(Model.PagingInfo, x => Url.Action("List", new { page = x }))
+</div>
+

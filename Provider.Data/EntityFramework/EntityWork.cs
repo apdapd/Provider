@@ -24,6 +24,10 @@ namespace Provider.Data.EntityFramework
             _uow = uow;
         }
 
+        public int AbonentsCount()
+        {
+            return _uow.Repository<Abonent>().GetAll().Count();
+        }
         public List<DataTarif> GetTarifs()
         {
             var tarifList = _uow.Repository<Tarif>().GetAll()
