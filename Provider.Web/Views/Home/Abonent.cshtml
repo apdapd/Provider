@@ -1,0 +1,43 @@
+﻿@model Provider.Web.Models.NewAbonentModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    ViewBag.Title = "Регистрация нового";
+}
+
+<h2>Abonent</h2>
+@using (Html.BeginForm())
+{
+    <table>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.Name)
+                @Html.TextBoxFor(a => a.Name)
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.Address)
+                @Html.TextBoxFor(a => a.Address)
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select id="TarifId" name="TarifId">
+                    @foreach (var tarif in Model.Tarifs)
+                    {
+                        <option value="@tarif.TarifId">@tarif.Name</option>
+                    }
+                </select>
+                @*@Html.DropDownListFor(a => a.Tarifs, new SelectList(Model.Tarifs, "TarifId", "Name", Model.Tarifs.First().TarifId))*@
+
+
+            </td>
+        </tr>
+    </table>
+    <input type="submit" value="Создать">
+}
+

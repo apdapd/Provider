@@ -8,19 +8,24 @@
     <table>
         <tr>
             <td>
-            @*<td><p><a href="/Home/Buy/@b.Id">Код абонента</a></p></td>*@
+            @*<td><p><a href="/Home/List/0">Код абонента</a></p></td>*@
                 <p>Код абонента</p>
             </td>
             <td>
+                @*<td><p><a href="/Home/SetOrder/0">Код абонента</a></p></td>*@
                 <p>Код тарифа</p>
             </td><td>
+                     @*<td><p><a href="/Home/SetOrder/0">Код абонента</a></p></td>*@
                 <p>Абонент</p>
             </td>
             <td>
+                @*<td><p><a href="/Home/SetOrder/0">Код абонента</a></p></td>*@
                 <p>Адрес</p>
             </td>
             <td>
-                <p>Тариф</p>
+                @*<td><p>@Html.ActionLink("Тариф", "SetOrder", "Home", new { nOrder = 4}, null)</p></td>*@
+            @*<td><p><a href="/Home/SetOrder/4">Тариф</a></p></td>*@            
+    <p>Тариф</p>
             </td>
         </tr>
         @foreach (var b in Model.Abonents)
